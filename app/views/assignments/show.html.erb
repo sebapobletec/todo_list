@@ -17,7 +17,9 @@
 
       <% @ranking.each do |assign| %>
       <li>
-      <div class="card"><%= assign.user.name %>
+      <div class="card">
+        <%= assign.user.name %>
+        <%= image_tag assign.user.photo, class:'card-img-top  ' %>
       </div>
       </li>
       <% end %>

@@ -9,6 +9,6 @@
 9.times do |i|
   Todo.create(
     title: "Actividad #{i+1}",
-    photo: "https://loremflickr.com/320/240?random=#{i+1}"
+    photo: "https://loremflickr.com/320/240?lock=#{i+1}"
   )
 end
