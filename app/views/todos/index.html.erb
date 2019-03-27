@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <% @todos.each do |todo|%>
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag todo.photo, class: 'card-img-top' %>
+          <%= todo.title%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
