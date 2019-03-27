@@ -1,7 +1,29 @@
 <div class="container">
-  Usuarios que han completado la <%= @todo.title %>:
-  <br>
-  <% @users.each do |user| %>
-  <%= user.name %>
-  <% end %>
+  <div class="row">
+
+    <div class="col-6">
+      Usuarios que han completado la <%= @todo.title %>:
+      <br>
+      <% @allusers.each do |user| %>
+      <li><%= user.name %></li>
+      <% end %>
+    </div>
+
+    <div class="col-3">
+      Ranking:
+      <br>
+      <ol type="1">
+
+
+      <% @ranking.each do |user| %>
+      <li>
+      <div class="card"><%= user.name %>
+      <%= image_tag (user.photo), class: 'img-fluid' %>
+      </div>
+      </li>
+      <% end %>
+      </ol>
+    </div>
+
+  </div>
 </div>
