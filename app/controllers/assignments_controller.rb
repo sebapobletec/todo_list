@@ -16,8 +16,13 @@ class AssignmentsController < ApplicationController
     else
       @assignment.completed = true
     end
-
     @assignment.save
     redirect_to root_path
+  end
+
+  def show
+  @assignment = Assignment.find(params[:assignment_id])
+  @todo = @assignment.todo
+  @users= @todo.users
   end
 end

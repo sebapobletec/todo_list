@@ -1,6 +1,6 @@
 <div class="container">
 <%= current_user.email %>
-<%= @completed_todos %>
+<%= @completed_todos %>/<%=@assignments.count %>
   <div class="row">
 
     <% @assignments.each do |assignment|%>
@@ -8,6 +8,7 @@
         <div class="card">
           <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
           <%= assignment.todo.title %>
+          <%= link_to 'Show', assignments_show_path(:params => {:assignment_id => assignment.id}) %>
           <%= assignment.completed %>
           <%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
         </div>

@@ -1,0 +1,7 @@
+<div class="container">
+  Usuarios que han completado la <%= @todo.title %>:
+  <br>
+  <% @users.each do |user| %>
+  <%= user.name %>
+  <% end %>
+</div>
