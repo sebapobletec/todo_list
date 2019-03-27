@@ -8,4 +8,16 @@ class AssignmentsController < ApplicationController
       end
       redirect_to root_path
   end
+
+  def change_status
+    @assignment = Assignment.find(params[:assignment_id])
+    if  @assignment.completed?
+      @assignment.completed = false
+    else
+      @assignment.completed = true
+    end
+
+    @assignment.save
+    redirect_to root_path
+  end
 end
