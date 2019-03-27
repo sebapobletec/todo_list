@@ -5,15 +5,14 @@
 
     <% @assignments.each do |assignment|%>
       <div class="col-4">
-        <div class="card">
+        <div class="card p-2 m-3    ">
           <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
           <table>
             <tr>
-              <td><%= assignment.todo.title %></td>
-              <td><%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
+              <td><%= assignment.todo.title %> <%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
               <td>
-              <button class="btn btn-info"><%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
-              </button>
+                <button class="btn btn-info"><%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
+                </button>
               </td>
             </tr>
           </table>
