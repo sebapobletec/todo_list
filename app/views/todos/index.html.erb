@@ -1,11 +1,13 @@
 <div class="container">
-<%= @user.email %>
+<%= current_user.email %>
   <div class="row">
+    <%= @assignments %>
     <% @assignments.each do |assignment|%>
       <div class="col-4">
         <div class="card">
-          <%= image_tag assignment.photo, class: 'card-img-top' %>
-          <%= assignment.title%>
+          <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
+          <%= assignment.todo.title %>
+          <%= assignment.completed %>
         </div>
       </div>
     <% end %>
