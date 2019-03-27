@@ -7,10 +7,17 @@
       <div class="col-4">
         <div class="card">
           <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
-          <%= assignment.todo.title %>
-          <%= link_to 'Show', assignments_show_path(:params => {:assignment_id => assignment.id}) %>
-          <%= assignment.completed %>
-          <%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
+          <table>
+            <tr>
+              <td><%= assignment.todo.title %></td>
+              <td><%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
+              <td>
+              <button class="btn btn-info"><%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
+              </button>
+              </td>
+            </tr>
+          </table>
+
         </div>
       </div>
     <% end %>
