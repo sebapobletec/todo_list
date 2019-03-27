@@ -4,7 +4,7 @@
     <div class="col-6">
       Usuarios que han completado la <%= @todo.title %>:
       <br>
-      <% @allusers.each do |user| %>
+      <% @users.each do |user| %>
       <li><%= user.name %></li>
       <% end %>
     </div>
@@ -15,10 +15,9 @@
       <ol type="1">
 
 
-      <% @ranking.each do |user| %>
+      <% @ranking.each do |assign| %>
       <li>
-      <div class="card"><%= user.name %>
-      <%= image_tag (user.photo), class: 'img-fluid' %>
+      <div class="card"><%= assign.user.name %>
       </div>
       </li>
       <% end %>

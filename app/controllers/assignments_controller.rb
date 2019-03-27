@@ -23,8 +23,8 @@ class AssignmentsController < ApplicationController
   def show
   @assignment = Assignment.find(params[:assignment_id])
   @todo = @assignment.todo
-  @users = User.joins(:assignments).where(assignments: {completed: true, todo: @todo})
-  @allusers = @users.order('name ASC')
-  @ranking = @users.order('updated_at ASC').last(5)
+  @users = User.joins(:assignments).where(assignments: {completed: true, todo: @todo}).order('name ASC')
+  @ranking = Assignment.joins(:todo).where(assignments: {completed: true, todo: @todo}).order('updated_at ASC').limit(5)
+
   end
 end
