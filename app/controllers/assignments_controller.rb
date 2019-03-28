@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-before_action :completed_todos, only: [:show, :change_status]
+before_action :completed_todos, only: [:show, :updated]
 before_action :authenticate_user!
 
   def create
@@ -12,7 +12,7 @@ before_action :authenticate_user!
     redirect_to root_path
   end
 
-  def change_status
+  def update
     @assignment = Assignment.find(params[:assignment_id])
     if  @assignment.completed?
       @assignment.completed = false

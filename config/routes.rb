@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'assignments/create'
-  post 'assignments/change_status'
+  post 'assignments/update'
   get 'assignments/show'
   get 'todos/index'
   devise_for :users, controllers:{
