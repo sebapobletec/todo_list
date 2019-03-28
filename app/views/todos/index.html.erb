@@ -4,14 +4,22 @@
   <div class="row">
 
     <% @assignments.each do |assignment|%>
-      <div class="col-4">
+      <div class="mx-auto col-10 col-md-4">
         <div class="card p-2 m-3    ">
-          <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
+
+          <%= link_to assignments_show_path(:params => {:assignment_id => assignment.id}) do %>
+             <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
+          <% end %>
+
           <table>
             <tr>
               <td><%= assignment.todo.title %>
-                <button class="btn btn-sm btn-secondary"> <%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
-              </button><td>
+
+              <td>
+
+              </td>
+
+              <td>
                 <button class="btn btn-sm btn-info"><%= link_to 'Complete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %>
                 </button>
               </td>
