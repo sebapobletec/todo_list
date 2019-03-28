@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-6">
-      Users who have completed <%= @todo.title %>:
+    <div class="p-1 col-12 col-sm-6 container">
+      <h4>Users who have completed <%= @todo.title %>:</h4>
       <br>
       <% @users.each do |user| %>
       <li><%= user.name %></li>
       <% end %>
     </div>
 
-    <div class="col-3">
-      Ranking:
+    <div class="p-1 col-12 col-sm-6 container">
+      <h4>Ranking:</h4>
       <br>
       <ol type="1">
 
 
       <% @ranking.each do |assign| %>
       <li>
-      <div class="card p-2 m-3">
+      <div class="card col-9 p-2 m-3">
         <%= assign.user.name %>
         <%= image_tag assign.user.photo, class:'card-img-top  ' %>
       </div>
