@@ -9,9 +9,10 @@
           <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
           <table>
             <tr>
-              <td><%= assignment.todo.title %> <%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
-              <td>
-                <button class="btn btn-info"><%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
+              <td><%= assignment.todo.title %>
+                <button class="btn btn-sm btn-secondary"> <%= link_to 'View Details', assignments_show_path(:params => {:assignment_id => assignment.id}) %></td>
+              </button><td>
+                <button class="btn btn-sm btn-info"><%= link_to 'Complete', assignments_change_status_path(:params => {:assignment_id => assignment.id}), method: :post %>
                 </button>
               </td>
             </tr>
