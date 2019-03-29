@@ -7,31 +7,21 @@
       <div class="mx-auto col-10 col-md-4">
         <div class="card p-2 m-3    ">
 
-          <%= link_to assignments_show_path(:params => {:assignment_id => assignment.id}) do %>
-             <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
+          <td><%= assignment.todo.title %><td>
+
+          <% if assignment.completed? %>
+            <%= link_to assignments_show_path(:params => {:assignment_id => assignment.id}) do %>
+               <%= image_tag assignment.todo.photo, class: 'card-img-top' %>
+            <% end %>
+            <button class="btn btn-sm btn-danger"><%= link_to 'Uncomplete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %></button>
+          <% else %>
+            <%= link_to assignments_show_path(:params => {:assignment_id => assignment.id}) do %>
+             <%= image_tag assignment.todo.photo, class: 'card-img-top gray' %>
+            <% end %>
+            <td>
+              <button class="btn btn-sm btn-info"><%= link_to 'Complete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %></button>
+            </td>
           <% end %>
-
-          <table>
-            <tr>
-              <td><%= assignment.todo.title %>
-
-              <td>
-
-              </td>
-              <% if assignment.completed? %>
-              <td>
-                <button class="btn btn-sm btn-danger"><%= link_to 'Uncomplete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %>
-                </button>
-              </td>
-              <% else %>
-              <td>
-                <button class="btn btn-sm btn-info"><%= link_to 'Complete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %>
-                </button>
-              </td>
-
-              <% end %>
-            </tr>
-          </table>
 
         </div>
       </div>

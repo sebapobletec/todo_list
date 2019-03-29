@@ -22,3 +22,8 @@ a:hover {
   color: white;
   text-decoration: none;
 }
+
+
+.gray{
+    filter: grayscale(100%);
+}
