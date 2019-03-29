@@ -18,11 +18,18 @@
               <td>
 
               </td>
-
+              <% if assignment.completed? %>
+              <td>
+                <button class="btn btn-sm btn-danger"><%= link_to 'Uncomplete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %>
+                </button>
+              </td>
+              <% else %>
               <td>
                 <button class="btn btn-sm btn-info"><%= link_to 'Complete', assignments_update_path(:params => {:assignment_id => assignment.id}), method: :post %>
                 </button>
               </td>
+
+              <% end %>
             </tr>
           </table>
 
